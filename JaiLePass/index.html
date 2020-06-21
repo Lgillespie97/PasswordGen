@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>JailePass</title>
+    <link rel="stylesheet" href="JailePass.css" type="text/css" />
+</head>
+<script src="JaiLePass.js"></script>
+
+<body>
+    <h1><img src="images/keys.png"/>Password Generator</h1>
+
+    <h3>Generate a Password</h3>
+    <textarea id="generatedpassword" cols="50" rows="5" readonly>&nbsp;</textarea>
+   <!--
+    <input type="text" id="generatedpassword" size="128"/>
+    -->
+    <!--
+    <span id="generatedpassword">Your new password will appear here.</span>
+-->
+    <h3>Select Password Generation Criteria</h3>
+    <div>
+        <label for="passwordLength">password length (between 8 and 128):</label>
+        <br/>
+        <input type="text" id="passwordLength" value="8" maxlength="3" size="3" onchange="javascript:updatePasswordRange()"/>
+        <input type="range" id="passwordLengthRange" min="8" max="128" step="1" value="8" width="300"  onchange="javascript:updatePasswordLength()" />
+         
+    </div>
+
+    <h3>Select Character Types:</h3>
+    <div>
+        <input type="checkbox" id="uppercase" checked="true" />
+        <label for="uppercase">use uppercase characters</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="lowercase" checked="true" />
+        <label for="lowercase">use lowercase characters</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="numbers" checked="true" />
+        <label for="numbers">use numeric characters</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="specialcharacters" checked="true" />
+        <label for="specialcharacters">use special characters</label>
+    </div>
+    <br/>
+    <div>
+    <button type="button" onclick="javascript:getGeneratedPassword()">Generate Password</button> &nbsp; <button type="button" onclick="javascript:copyGeneratedPassword()">Copy Generated Password</button>
+    </div>
+   
+</body>
+
+</html>
